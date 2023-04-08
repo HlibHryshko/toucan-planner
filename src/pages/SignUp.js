@@ -1,7 +1,7 @@
 import Button from "../components/Button";
 import Field from "../components/Field";
 
-const LoginForm = () => {
+const SignUp = () => {
   return (
     <div
       className="flex items-center justify-center"
@@ -45,7 +45,7 @@ const LoginForm = () => {
             marginTop: "44px",
           }}
         >
-          Sign In
+          Sign Up
         </div>
         {/* div that creates space between fields and buttons */}
         <div className="flex flex-col justify-center space-y-5">
@@ -115,4 +115,4 @@ const LoginForm = () => {
   );
 };
 
-export default LoginForm;
+export default SignUp;
