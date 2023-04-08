@@ -7,8 +7,14 @@ const CalendarTile = ({day, timetable}) => {
       {
         timetable.map(item => {
           return <div className="flex flex-wrap place-items-center">
-            <div className={`border-x-2 m-2 p-1 border-primary-green`}> 
+            <div name="left-time-divider" className="">
+              <hr className="bg-primary-green w-3px h-8"/>
+            </div>
+            <div name="time" className={`my-2 p-1`}> 
               {item.startTime} {(item.endTime) ? ` - ${item.endTime}` : ""}
+            </div>
+            <div name="right-time-divider" className="">
+              <hr className="bg-primary-green w-3px h-8 mr-2"/>
             </div>
             <div className="underline underline-offset-1">
               {item.name}

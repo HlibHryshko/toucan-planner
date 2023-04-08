@@ -10,6 +10,9 @@ module.exports = {
       boxShadow: {
         // x, y, blur, adding size, color
         'tile': '14px 14px 8px 0px rgb(0 0 0 / 0.2)'
+      },
+      width: {
+        '3px': '3px'
       }
     },
   },
