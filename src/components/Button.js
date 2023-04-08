@@ -1,5 +1,7 @@
 import classNames from "classnames";
 
+// add hover + onclick styling
+
 function Button({
   children,
   primary,

@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import Button from "./Button";
 
+// add an icon to show and hide the component
+
 const CategoriesList = () => {
   const categories = [
     {
