@@ -1,6 +1,6 @@
 const CalendarTile = ({day, timetable}) => {
 
-  return <div className="shadow-md box-border w-96 p-6 border-1">
+  return <div className="shadow-tile box-border w-96 p-6 border-2 border-secondary-green rounded-[14px]">
       <div className="font-bold text-xl uppercase">{day} <br /></div>
       <hr className="my-1 bg-primary-green" style={{border: "none", height: "2px"}}/>
       <div className="font-medium">

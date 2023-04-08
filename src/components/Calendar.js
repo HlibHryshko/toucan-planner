@@ -8,14 +8,14 @@ const defaultTimetable = [
 ]
 
 const Calendar = () => {
-  return <div>
-    <CalendarTile day ="Monday, April 10" timetable = {defaultTimetable}/>
-    <CalendarTile day ="Monday, April 10" timetable = {defaultTimetable}/>
-    <CalendarTile day ="Monday, April 10" timetable = {defaultTimetable}/>
-    <CalendarTile day ="Monday, April 10" timetable = {defaultTimetable}/>
-    <CalendarTile day ="Monday, April 10" timetable = {defaultTimetable}/>
-    <CalendarTile day ="Monday, April 10" timetable = {defaultTimetable}/>
-    <CalendarTile day ="Monday, April 10" timetable = {defaultTimetable}/>
+  return <div className="flex flex-align">
+    <div className="m-5"><CalendarTile day ="Monday, April 10" timetable = {defaultTimetable}/> </div>
+    <div className="m-5"><CalendarTile day ="Monday, April 10" timetable = {defaultTimetable}/> </div>
+    <div className="m-5"><CalendarTile day ="Monday, April 10" timetable = {defaultTimetable}/> </div>
+    <div className="m-5"><CalendarTile day ="Monday, April 10" timetable = {defaultTimetable}/> </div>
+    <div className="m-5"><CalendarTile day ="Monday, April 10" timetable = {defaultTimetable}/> </div>
+    <div className="m-5"><CalendarTile day ="Monday, April 10" timetable = {defaultTimetable}/> </div>
+    <div className="m-5"><CalendarTile day ="Monday, April 10" timetable = {defaultTimetable}/> </div>
   </div>;
 };
 
