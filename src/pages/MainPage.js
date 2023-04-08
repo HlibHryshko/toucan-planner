@@ -1,10 +1,10 @@
 import Calendar from "../components/Calendar";
-import CategoriesList from "../components/CategoriesList";
+import CategoriesSidebar from "../components/CategoriesSideBar";
 
 const MainPage = () => {
   return (
     <div>
-      <CategoriesList />
+      <CategoriesSidebar />
       <Calendar />
     </div>
   );
