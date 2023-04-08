@@ -5,7 +5,9 @@ module.exports = {
     extend: {
       colors: {
         'primary-green': '#00403D',
-        'secondary-green': '#4B7E77'
+        'secondary-green': '#4B7E77',
+        'tile-background-green': '#F6FFFE',
+        'background-green': '#F3FFFD'
       },
       boxShadow: {
         // x, y, blur, adding size, color

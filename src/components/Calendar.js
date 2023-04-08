@@ -8,7 +8,7 @@ const defaultTimetable = [
 ]
 
 const Calendar = () => {
-  return <div className="flex flex-align">
+  return <div className="bg-background-green flex flex-align">
     <div className="m-5"><CalendarTile day ="Monday, April 10" timetable = {defaultTimetable}/> </div>
     <div className="m-5"><CalendarTile day ="Monday, April 10" timetable = {defaultTimetable}/> </div>
     <div className="m-5"><CalendarTile day ="Monday, April 10" timetable = {defaultTimetable}/> </div>
