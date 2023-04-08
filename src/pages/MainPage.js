@@ -1,5 +1,11 @@
+import CategoriesList from "../components/CategoriesList";
+
 const MainPage = () => {
-  return <div>smt</div>;
+  return (
+    <div>
+      <CategoriesList />
+    </div>
+  );
 };
 
 export default MainPage;
