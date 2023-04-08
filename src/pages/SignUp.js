@@ -32,7 +32,7 @@ const SignUp = () => {
           borderRadius: "25px",
         }}
       >
-        {/* Sign In div */}
+        {/* Sign Up div */}
         <div
           style={{
             width: "171px",
@@ -60,9 +60,16 @@ const SignUp = () => {
             </div>
             <div className="flex justify-center">
               <Field
-                className="text-center w-full h-12 max-h-full mx-10 my-5"
+                className="text-center w-full h-12 max-h-full mx-10 mt-5"
                 placeholder="password"
               />
+            </div>
+            <div className="flex justify-center">
+              <Field
+                className="text-center w-full h-12 max-h-full mx-10 my-5"
+                placeholder="repeat password"
+              />
+              
             </div>
           </div>
           {/* div that holds buttons and so on */}
@@ -70,14 +77,10 @@ const SignUp = () => {
             <Button primary rounded
               className="w-64 h-12 mt-5 text-lg"
             >
-              Sign In
+              Sign Up
             </Button>
-            <Button primary rounded
-              className="w-64 h-12 mt-5 text-lg"
-            >
-              Forgot password
-            </Button>
-            {/* div that holds don't have an account and sign up options */}
+            
+            {/* div that holds already have an account and sign in options */}
             <div className="flex">
               <div
                 style={{
@@ -87,11 +90,11 @@ const SignUp = () => {
                   lineHeight: "48px",
                   display: "flex",
                   color: "#474747",
-                  marginLeft: "90px",
+                  marginLeft: "120px",
                 }}
               >
                 {" "}
-                Don't have an account?
+                Already have an account?  
               </div>
               <div
                 style={{
@@ -101,10 +104,11 @@ const SignUp = () => {
                   lineHeight: "48px",
                   display: "flex",
                   color: "#004A47",
+                  marginLeft: "7px"
                 }}
               >
                 {" "}
-                Sign Up
+                Sign In
               </div>
             </div>
           </div>
