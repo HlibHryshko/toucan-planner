@@ -33,34 +33,31 @@ const LoginForm = () => {
         }}
       >
         {/* Sign In div */}
-        <div
+        <div className="text-center mx-auto"
           style={{
-            width: "171px",
             height: "55px",
             fontWeight: "400",
             fontSize: "40px",
-            display: "flex",
             color: "#474747",
-            marginLeft: "155px",
             marginTop: "44px",
           }}
         >
-          Sign In
+          <h1>Sign In</h1>
         </div>
         {/* div that creates space between fields and buttons */}
-        <div className="flex flex-col justify-center space-y-5">
+        <div className="flex flex-col justify-center space-y-5 font-semibold">
         <div>
           {/* div that holds fields */}
           <div>
             <div className="flex justify-center">
               <Field
-                className="text-center w-full h-12 max-h-full mx-10 mt-5"
+                className="text-center w-full h-12 max-h-full mx-10 mt-5 font-semibold"
                 placeholder="e-mail"
               />
             </div>
             <div className="flex justify-center">
               <Field
-                className="text-center w-full h-12 max-h-full mx-10 my-5"
+                className="text-center w-full h-12 max-h-full mx-10 my-5 font-semibold"
                 placeholder="password"
               />
             </div>
@@ -81,13 +78,11 @@ const LoginForm = () => {
             <div className="flex">
               <div
                 style={{
-                  width: "171px",
                   height: "55px",
                   fontSize: "15px",
                   lineHeight: "48px",
-                  display: "flex",
                   color: "#474747",
-                  marginLeft: "90px",
+                  marginRight: "9px",
                 }}
               >
                 {" "}
@@ -95,12 +90,10 @@ const LoginForm = () => {
               </div>
               <div
                 style={{
-                  width: "171px",
                   height: "55px",
                   fontSize: "15px",
                   lineHeight: "48px",
-                  display: "flex",
-                  color: "#004A47",
+                  color: "#004A47"
                 }}
               >
                 {" "}
