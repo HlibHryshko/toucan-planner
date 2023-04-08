@@ -1,9 +1,30 @@
-const OrganizationsList = ({organizations, active}) => {
-  return <div>
-    {organizations.map(organization => {
-      return <div key={organization.name}>{organization.name === active.name ? "---" : ""}{organization.name}</div>
-    })}
-  </div>
-}
+const OrganizationsList = ({
+  organizations,
+  organization,
+  onOrganizationClick,
+}) => {
+  console.log("----------------------");
+  console.log(organization);
+  console.log(organizations);
+  console.log(onOrganizationClick);
+  console.log("----------------------");
+  return (
+    <div>
+      {organizations.map((org) => {
+        return (
+          <div
+            key={org.id}
+            className={org.id === organization?.id ? "text-lg" : ""}
+            onClick={() => {
+              onOrganizationClick(org);
+            }}
+          >
+            {org.name}
+          </div>
+        );
+      })}
+    </div>
+  );
+};
 
-export default OrganizationsList
+export default OrganizationsList;
