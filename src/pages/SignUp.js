@@ -76,13 +76,60 @@ const SignUp = () => {
               </div>
             </div>
             {/* div that holds buttons and so on */}
-            <div>
+            <div className="flex justify-center">
               <CheckBox
                 value={privacySettingsAccepted}
                 onChange={() => {
                   setPrivaceSettingsAccepted((currentState) => !currentState);
                 }}
               />
+              
+                <div
+                  style={{
+                    fontSize: "12px",
+                    lineHeight: "25px",
+                    color: "#474747",
+                    marginLeft: "15px",
+                  }}
+                >
+                  {" "}
+                  I accept the
+                </div>
+                <div
+                  style={{
+                    fontSize: "13px",
+                    lineHeight: "25px",
+                    color: "#004A47",
+                    marginLeft: "10px",
+                    marginRight: "10px"
+                  }}
+                >
+                  {" "}
+                  Terms of service
+                </div>
+                <div
+                  style={{
+                    fontSize: "12px",
+                    lineHeight: "25px",
+                    color: "#474747",
+                    marginRight: "10px"
+                   
+                  }}
+                >
+                  {" "}
+                  and
+                </div>
+                <div
+                  style={{
+                    fontSize: "13px",
+                    lineHeight: "25px",
+                    color: "#004A47"
+                  }}
+                >
+                  {" "}
+                  Privacy Policy
+                </div>
+              
             </div>
             <div className="flex flex-col items-center">
               <Button primary rounded className="w-64 h-12 mt-5 text-lg">
@@ -97,7 +144,6 @@ const SignUp = () => {
                     height: "55px",
                     fontSize: "15px",
                     lineHeight: "48px",
-                    display: "flex",
                     color: "#474747",
                     marginLeft: "120px",
                   }}
@@ -111,7 +157,6 @@ const SignUp = () => {
                     height: "55px",
                     fontSize: "15px",
                     lineHeight: "48px",
-                    display: "flex",
                     color: "#004A47",
                     marginLeft: "7px",
                   }}
