@@ -7,7 +7,7 @@ const usersApi = createApi({
   }),
   endpoints(builder) {
     return {
-      singIn: builder.query({
+      signIn: builder.mutation({
         query: (form) => {
           return {
             url: "/login",
@@ -35,5 +35,5 @@ const usersApi = createApi({
   },
 });
 
-export const { useSingInQuery, useSignUpMutation } = usersApi;
+export const { useSignInMutation, useSignUpMutation } = usersApi;
 export { usersApi };

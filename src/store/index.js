@@ -8,7 +8,11 @@ import {
   hashPassword,
   formsReducer,
 } from "./slices/formsSlice";
-import { usersApi, useSignUpMutation, useSingInQuery } from "./apis/usersApi";
+import {
+  usersApi,
+  useSignUpMutation,
+  useSignInMutation,
+} from "./apis/usersApi";
 import { setupListeners } from "@reduxjs/toolkit/dist/query";
 import {
   categoriesApi,
@@ -44,11 +48,8 @@ export {
   resetPasswords,
   hashPassword,
   signIn,
-};
-
-export {
   useSignUpMutation,
-  useSingInQuery,
+  useSignInMutation,
   useFetchNextCategoriesQuery,
   useFetchCalendarDataQuery,
 };

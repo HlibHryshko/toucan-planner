@@ -4,9 +4,10 @@ import Field from "../components/Field";
 import {
   changeEmail,
   changePassword,
-  hashPassword,
   resetForm,
   resetPasswords,
+  signIn,
+  useSignInMutation,
 } from "../store";
 import { Link, useNavigate } from "react-router-dom";
 /*
@@ -22,14 +23,23 @@ const LoginForm = () => {
 
   const { email, password } = useSelector(({ form }) => form);
 
+  const [ signUserIn, results ] = useSignInMutation();
+
+  if (results.isSuccess) {
+    dispatch(signIn({id: '12354132', email: 'something@test.com', name: 'Hrushka Peppa'}))
+    navigate('/'); 
+  }
+
   const handleFormSubmit = (event) => {
     event.preventDefault();
     // some validation
     // dispatch(hashPassword());
-    // make http request to the server
+    // make http request to the server\
+    signUserIn({ email, password });
+    console.log(results);
     dispatch(resetForm());
 
-    navigate("/");
+    // navigate("/");
   };
 
   return (
