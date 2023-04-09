@@ -1,4 +1,5 @@
 import { GoPlus } from "react-icons/go"
+import { useNavigate } from "react-router-dom";
 
 const OrganizationsList = ({
   organizations,
@@ -10,6 +11,7 @@ const OrganizationsList = ({
   console.log(organizations);
   console.log(onOrganizationClick);
   console.log("----------------------");
+  const navigate = useNavigate();
 
   return (
     <div>
@@ -28,7 +30,7 @@ const OrganizationsList = ({
           </div>
         );
       })}
-      <GoPlus className="bg-sidebar-add-org-background-green hover:bg-sidebar-add-org-hover-green shadow-plus-org h-8 w-full self-end" color="white" />
+      <GoPlus onClick={() => {navigate('/createcourse')}} className="bg-sidebar-add-org-background-green hover:bg-sidebar-add-org-hover-green shadow-plus-org h-8 w-full self-end" color="white" />
     </div>
   );
 };
