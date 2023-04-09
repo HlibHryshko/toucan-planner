@@ -10,6 +10,8 @@ import {
   hashPassword,
   resetForm,
   resetPasswords,
+  signIn,
+  useSignUpMutation,
 } from "../store";
 import { Link, useNavigate } from "react-router-dom";
 
@@ -22,13 +24,21 @@ const SignUp = () => {
     (state) => state.form
   );
 
+  const [ signUserUp, results ] = useSignUpMutation();
+
+  if (results.isSuccess) {
+    dispatch(signIn({id: '12354132', email: 'something@test.com', name: 'Hrushka Peppa'}))
+    navigate('/'); 
+  }
+
   const handleFormSubmit = (event) => {
     event.preventDefault();
     // some validation
-    dispatch(hashPassword());
+    // dispatch(hashPassword());
     // make http request to the server
+    signUserUp({ email, password });
+    console.log(results);
     dispatch(resetForm());
-    navigate("/");
   };
 
   const [privacySettingsAccepted, setPrivaceSettingsAccepted] = useState(false);
