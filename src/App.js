@@ -7,7 +7,7 @@ import CreateCourseForm from "./pages/CreateCourseForm";
 
 const App = () => {
   return (
-    <div className="">
+    <div className="bg-background-green">
       <BrowserRouter>
         <div className="">
           <div className="space-x-4">

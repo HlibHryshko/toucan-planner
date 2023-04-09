@@ -14,7 +14,7 @@ const Field = ({ password, className, ...props }) => {
   };
 
   const classes = classNames(
-    "border border-green-700 rounded-xl m-1",
+    "border bg-background-green border-green-700 rounded-xl m-1",
     className
   );
 

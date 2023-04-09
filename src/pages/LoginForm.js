@@ -2,6 +2,7 @@ import { useDispatch, useSelector } from "react-redux";
 import Button from "../components/Button";
 import Field from "../components/Field";
 import { changeEmail, changePassword } from "../store";
+import { Link } from "react-router-dom";
 
 const LoginForm = () => {
   const dispatch = useDispatch();
@@ -86,7 +87,12 @@ const LoginForm = () => {
               <Button primary rounded className="w-64 h-12 mt-5 text-lg">
                 Sign In
               </Button>
-              <Button primary rounded className="w-64 h-12 mt-5 text-lg">
+              <Button
+                primary
+                outline
+                rounded
+                className="w-64 h-12 mt-5 text-lg"
+              >
                 Forgot password
               </Button>
               {/* div that holds don't have an account and sign up options */}
@@ -102,7 +108,7 @@ const LoginForm = () => {
                 >
                   Don't have an account?
                 </div>
-                <div
+                <Link to='/signup'
                   style={{
                     height: "55px",
                     fontSize: "15px",
@@ -110,9 +116,8 @@ const LoginForm = () => {
                     color: "#004A47",
                   }}
                 >
-                  {" "}
                   Sign Up
-                </div>
+                </Link>
               </div>
             </div>
           </div>
