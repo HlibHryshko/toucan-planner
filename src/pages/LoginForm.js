@@ -23,11 +23,13 @@ const LoginForm = () => {
 
   const { email, password } = useSelector(({ form }) => form);
 
-  const [ signUserIn, results ] = useSignInMutation();
+  const [signUserIn, results] = useSignInMutation();
 
   if (results.isSuccess) {
-    dispatch(signIn({id: '12354132', email: 'something@test.com', name: 'Hrushka Peppa'}))
-    navigate('/'); 
+    if (results.data.user) {
+      dispatch(signIn(results.data.user));
+      navigate("/");
+    }
   }
 
   const handleFormSubmit = (event) => {
@@ -36,7 +38,6 @@ const LoginForm = () => {
     // dispatch(hashPassword());
     // make http request to the server\
     signUserIn({ email, password });
-    console.log(results);
     dispatch(resetForm());
 
     // navigate("/");
