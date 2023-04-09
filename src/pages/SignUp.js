@@ -2,8 +2,15 @@ import { useState } from "react";
 import Button from "../components/Button";
 import CheckBox from "../components/CheckBox";
 import Field from "../components/Field";
+import { useDispatch, useSelector } from "react-redux";
+import { changeConfirmPassword, changeEmail, changePassword } from "../store";
 
 const SignUp = () => {
+  const dispatch = useDispatch();
+  const { email, password, confirmPassword } = useSelector(
+    (state) => state.form
+  );
+
   const [privacySettingsAccepted, setPrivaceSettingsAccepted] = useState(false);
   return (
     <div
@@ -38,9 +45,8 @@ const SignUp = () => {
       >
         {/* Sign Up div */}
         <div
-            className="text-center mx-auto"
-
-            style={{
+          className="text-center mx-auto"
+          style={{
             height: "55px",
             fontWeight: "400",
             fontSize: "40px",
@@ -48,7 +54,7 @@ const SignUp = () => {
             marginTop: "44px",
           }}
         >
-            <h1>Sign Up</h1>
+          <h1>Sign Up</h1>
         </div>
         {/* div that creates space between fields and buttons */}
         <div className="flex flex-col justify-center space-y-5">
@@ -57,18 +63,32 @@ const SignUp = () => {
             <div>
               <div className="flex justify-center">
                 <Field
+                  value={email}
+                  onChange={(event) => {
+                    dispatch(changeEmail(event.target.value));
+                  }}
                   className="text-center w-full h-12 max-h-full mx-10 mt-5 font-semibold"
                   placeholder="e-mail"
                 />
               </div>
               <div className="flex justify-center">
                 <Field
+                  value={password}
+                  onChange={(event) => {
+                    dispatch(changePassword(event.target.value));
+                  }}
+                  password
                   className="text-center w-full h-12 max-h-full mx-10 mt-5 font-semibold"
                   placeholder="password"
                 />
               </div>
               <div className="flex justify-center">
                 <Field
+                  value={confirmPassword}
+                  onChange={(event) => {
+                    dispatch(changeConfirmPassword(event.target.value));
+                  }}
+                  password
                   className="text-center w-full h-12 max-h-full mx-10 my-5 font-semibold"
                   placeholder="repeat password"
                 />
@@ -82,53 +102,51 @@ const SignUp = () => {
                   setPrivaceSettingsAccepted((currentState) => !currentState);
                 }}
               />
-              
-                <div
-                  style={{
-                    fontSize: "12px",
-                    lineHeight: "25px",
-                    color: "#474747",
-                    marginLeft: "15px",
-                  }}
-                >
-                  {" "}
-                  I accept the
-                </div>
-                <div
-                  style={{
-                    fontSize: "13px",
-                    lineHeight: "25px",
-                    color: "#004A47",
-                    marginLeft: "10px",
-                    marginRight: "10px"
-                  }}
-                >
-                  {" "}
-                  Terms of service
-                </div>
-                <div
-                  style={{
-                    fontSize: "12px",
-                    lineHeight: "25px",
-                    color: "#474747",
-                    marginRight: "10px"
-                   
-                  }}
-                >
-                  {" "}
-                  and
-                </div>
-                <div
-                  style={{
-                    fontSize: "13px",
-                    lineHeight: "25px",
-                    color: "#004A47"
-                  }}
-                >
-                  {" "}
-                  Privacy Policy
-                </div>
-              
+
+              <div
+                style={{
+                  fontSize: "12px",
+                  lineHeight: "25px",
+                  color: "#474747",
+                  marginLeft: "15px",
+                }}
+              >
+                {" "}
+                I accept the
+              </div>
+              <div
+                style={{
+                  fontSize: "13px",
+                  lineHeight: "25px",
+                  color: "#004A47",
+                  marginLeft: "10px",
+                  marginRight: "10px",
+                }}
+              >
+                {" "}
+                Terms of service
+              </div>
+              <div
+                style={{
+                  fontSize: "12px",
+                  lineHeight: "25px",
+                  color: "#474747",
+                  marginRight: "10px",
+                }}
+              >
+                {" "}
+                and
+              </div>
+              <div
+                style={{
+                  fontSize: "13px",
+                  lineHeight: "25px",
+                  color: "#004A47",
+                }}
+              >
+                {" "}
+                Privacy Policy
+              </div>
             </div>
             <div className="flex flex-col items-center">
               <Button primary rounded className="w-64 h-12 mt-5 text-lg">
@@ -142,7 +160,7 @@ const SignUp = () => {
                     height: "55px",
                     fontSize: "15px",
                     lineHeight: "48px",
-                    color: "#474747"
+                    color: "#474747",
                   }}
                 >
                   {" "}
