@@ -11,10 +11,12 @@ import {
   categoriesApi,
   useFetchNextCategoriesQuery,
 } from "./apis/categoriesApi";
+import { usersReducer, signIn } from "./slices/usersSlice";
 
 const store = configureStore({
   reducer: {
     form: formsReducer,
+    users: usersReducer,
     [usersApi.reducerPath]: usersApi.reducer,
     [categoriesApi.reducerPath]: categoriesApi.reducer,
   },
@@ -28,6 +30,6 @@ const store = configureStore({
 setupListeners(store.dispatch);
 
 export { store };
-export { changeConfirmPassword, changeEmail, changePassword };
+export { changeConfirmPassword, changeEmail, changePassword, signIn };
 
 export { useSignUpMutation, useSingInQuery, useFetchNextCategoriesQuery };
