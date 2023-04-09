@@ -6,6 +6,7 @@ const formsSlice = createSlice({
   name: "form",
   initialState: {
     email: "",
+    oldPassword: "",
     password: "",
     confirmPassword: "",
     hashedPassword: "",
@@ -13,6 +14,9 @@ const formsSlice = createSlice({
   reducers: {
     changeEmail(state, action) {
       state.email = action.payload;
+    },
+    changeOldPassword(state, action) {
+      state.oldPassword = action.payload;
     },
     changePassword(state, action) {
       state.password = action.payload;
@@ -35,6 +39,7 @@ const formsSlice = createSlice({
 export const formsReducer = formsSlice.reducer;
 export const {
   changeEmail,
+  changeOldPassword,
   changePassword,
   changeConfirmPassword,
   resetPasswords,

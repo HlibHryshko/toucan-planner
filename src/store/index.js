@@ -6,6 +6,7 @@ import {
   resetPasswords,
   resetForm,
   hashPassword,
+  changeOldPassword,
   formsReducer,
 } from "./slices/formsSlice";
 import {
@@ -46,6 +47,7 @@ export {
   changeConfirmPassword,
   changeEmail,
   changePassword,
+  changeOldPassword,
   resetForm,
   resetPasswords,
   hashPassword,

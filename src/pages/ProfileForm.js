@@ -1,13 +1,23 @@
 import { useDispatch, useSelector } from "react-redux";
 import Button from "../components/Button";
 import Field from "../components/Field";
-import { changeEmail, changePassword } from "../store";
+import {
+  changeConfirmPassword,
+  changeEmail,
+  changeOldPassword,
+  changePassword,
+} from "../store";
+import { useNavigate } from "react-router-dom";
 
 const ProfileForm = () => {
+  const navigate = useNavigate();
+
   const dispatch = useDispatch();
-  const { email, password } = useSelector((state) => {
-    return state.form;
-  });
+  const { email, oldPassword, password, confirmPassword } = useSelector(
+    (state) => {
+      return state.form;
+    }
+  );
   return (
     <div
       className="flex items-center justify-center"
@@ -58,64 +68,71 @@ const ProfileForm = () => {
           <div>
             {/* div that holds fields */}
             <div>
-              <div
-                value={email}
-                onChange={(event) => {
-                  dispatch(changeEmail(event.target.value));
-                }}
-                className="flex justify-center"
-              >
+              <div className="flex justify-center">
                 <Field
+                  value={email}
+                  onChange={(event) => {
+                    dispatch(changeEmail(event.target.value));
+                  }}
                   className="text-center w-96 h-12 max-h-full mt-0 font-semibold"
                   placeholder="Name"
                 />
               </div>
             </div>
             {/* div that holds buttons and so on */}
-            <div className="flex flex-col items-center">
-              <Button primary rounded className="rounded-xl w-96 h-12 mt-5 text-lg">
+            {/* <div className="flex flex-col items-center">
+              <Button
+                primary
+                rounded
+                className="rounded-xl w-96 h-12 mt-5 text-lg"
+              >
                 My courses
               </Button>
+            </div> */}
+            <div className="flex justify-center">
+              <Field
+                password
+                value={oldPassword}
+                onChange={(event) => {
+                  dispatch(changeOldPassword(event.target.value));
+                }}
+                className="text-center w-96 h-12 max-h-full mt-6 font-semibold"
+                placeholder="old password"
+              />
             </div>
-            <div
-                value={email}
+            <div className="flex justify-center">
+              <Field
+                password
+                value={password}
                 onChange={(event) => {
-                  dispatch(changeEmail(event.target.value));
+                  dispatch(changePassword(event.target.value));
                 }}
-                className="flex justify-center"
-              >
-                <Field
-                  className="text-center w-96 h-12 max-h-full mt-6 font-semibold"
-                  placeholder="old password"
-                />
-              </div>
-              <div
-                value={email}
+                className="text-center w-96 h-12 max-h-full mt-2 font-semibold"
+                placeholder="new password"
+              />
+            </div>
+            <div className="flex justify-center">
+              <Field
+                password
+                value={confirmPassword}
                 onChange={(event) => {
-                  dispatch(changeEmail(event.target.value));
+                  dispatch(changeConfirmPassword(event.target.value));
                 }}
-                className="flex justify-center"
-              >
-                <Field
-                  className="text-center w-96 h-12 max-h-full mt-2 font-semibold"
-                  placeholder="new password"
-                />
-              </div>
-              <div
-                value={email}
-                onChange={(event) => {
-                  dispatch(changeEmail(event.target.value));
-                }}
-                className="flex justify-center"
-              >
-                <Field
-                  className="text-center w-96 h-12 max-h-full mt-2 font-semibold"
-                  placeholder="repeat password"
-                />
-              </div>
+                className="text-center w-96 h-12 max-h-full mt-2 font-semibold"
+                placeholder="repeat password"
+              />
+            </div>
             {/* div that holds buttons and so on */}
             <div className="flex flex-col items-center">
-              <Button primary rounded className="w-64 h-12 mt-10 text-lg">
+              <Button
+                onClick={(event) => {
+                  event.preventDefault();
+                  navigate("/");
+                }}
+                primary
+                rounded
+                className="w-64 h-12 mt-10 text-lg"
+              >
                 Back
               </Button>
             </div>
