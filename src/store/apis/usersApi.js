@@ -3,7 +3,7 @@ import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 const usersApi = createApi({
   reducerPath: "usersApi",
   baseQuery: fetchBaseQuery({
-    baseUrl: "url",
+    baseUrl: "https://89.105.243.157:80/",
   }),
   endpoints(builder) {
     return {
