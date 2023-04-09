@@ -38,18 +38,17 @@ const SignUp = () => {
       >
         {/* Sign Up div */}
         <div
-          style={{
-            width: "171px",
+            className="text-center mx-auto"
+
+            style={{
             height: "55px",
             fontWeight: "400",
             fontSize: "40px",
-            display: "flex",
             color: "#474747",
-            marginLeft: "155px",
             marginTop: "44px",
           }}
         >
-          Sign Up
+            <h1>Sign Up</h1>
         </div>
         {/* div that creates space between fields and buttons */}
         <div className="flex flex-col justify-center space-y-5">
@@ -58,19 +57,19 @@ const SignUp = () => {
             <div>
               <div className="flex justify-center">
                 <Field
-                  className="text-center w-full h-12 max-h-full mx-10 mt-5"
+                  className="text-center w-full h-12 max-h-full mx-10 mt-5 font-semibold"
                   placeholder="e-mail"
                 />
               </div>
               <div className="flex justify-center">
                 <Field
-                  className="text-center w-full h-12 max-h-full mx-10 mt-5"
+                  className="text-center w-full h-12 max-h-full mx-10 mt-5 font-semibold"
                   placeholder="password"
                 />
               </div>
               <div className="flex justify-center">
                 <Field
-                  className="text-center w-full h-12 max-h-full mx-10 my-5"
+                  className="text-center w-full h-12 max-h-full mx-10 my-5 font-semibold"
                   placeholder="repeat password"
                 />
               </div>
@@ -140,12 +139,10 @@ const SignUp = () => {
               <div className="flex">
                 <div
                   style={{
-                    width: "171px",
                     height: "55px",
                     fontSize: "15px",
                     lineHeight: "48px",
-                    color: "#474747",
-                    marginLeft: "120px",
+                    color: "#474747"
                   }}
                 >
                   {" "}
@@ -153,7 +150,6 @@ const SignUp = () => {
                 </div>
                 <div
                   style={{
-                    width: "171px",
                     height: "55px",
                     fontSize: "15px",
                     lineHeight: "48px",
