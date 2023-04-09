@@ -14,7 +14,7 @@ const MainPage = () => {
   });
 
   return (
-    <div className="flex flex-row">
+    <div className="flex flex-row bg-background-green">
       <div className="flex">
         {isExpanded && <CategoriesSidebar />}
         <GoThreeBars
