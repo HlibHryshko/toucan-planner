@@ -25,7 +25,7 @@ const LoginForm = () => {
   const handleFormSubmit = (event) => {
     event.preventDefault();
     // some validation
-    dispatch(hashPassword());
+    // dispatch(hashPassword());
     // make http request to the server
     dispatch(resetForm());
 
