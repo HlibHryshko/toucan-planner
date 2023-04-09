@@ -12,17 +12,16 @@ const App = () => {
       <BrowserRouter>
         <div className="">
           <div className="space-x-4">
-            <Link to="/login">Login</Link> 
-            <Link to="/signup">Sign Up</Link> 
-            <Link to="/">Main Page</Link> 
-            <Link to="/start">Start Page</Link> 
-            <Link to="/createcourse">Create Course</Link> 
-            <Link to="/profile">Profile</Link> 
-            
+            <Link to="/login">Login</Link>
+            <Link to="/signup">Sign Up</Link>
+            <Link to="/">Main Page</Link>
+            <Link to="/start">Start Page</Link>
+            <Link to="/createcourse">Create Course</Link>
+            <Link to="/profile">Profile</Link>
           </div>
 
           <Routes>
-            <Route path = "/signup" element={<SignUp/>} />
+            <Route path="/signup" element={<SignUp />} />
             <Route path="/login" element={<LoginForm />} />
             <Route path="/" element={<MainPage />} />
             <Route path="/start" element={<StartingPage />} />

@@ -3,14 +3,33 @@ import Button from "../components/Button";
 import CheckBox from "../components/CheckBox";
 import Field from "../components/Field";
 import { useDispatch, useSelector } from "react-redux";
-import { changeConfirmPassword, changeEmail, changePassword } from "../store";
-import { Link } from "react-router-dom";
+import {
+  changeConfirmPassword,
+  changeEmail,
+  changePassword,
+  hashPassword,
+  resetForm,
+  resetPasswords,
+} from "../store";
+import { Link, useNavigate } from "react-router-dom";
 
 const SignUp = () => {
   const dispatch = useDispatch();
+
+  const navigate = useNavigate();
+
   const { email, password, confirmPassword } = useSelector(
     (state) => state.form
   );
+
+  const handleFormSubmit = (event) => {
+    event.preventDefault();
+    // some validation
+    dispatch(hashPassword());
+    // make http request to the server
+    dispatch(resetForm());
+    navigate("/");
+  };
 
   const [privacySettingsAccepted, setPrivaceSettingsAccepted] = useState(false);
   return (
@@ -34,7 +53,7 @@ const SignUp = () => {
         }}
       />
       <form
-        onSubmit={() => {}}
+        onSubmit={handleFormSubmit}
         className="border-2 border-green-800 rounded-xl p-4 shadow-2xl space-y-5"
         style={{
           width: "458px",
@@ -150,7 +169,12 @@ const SignUp = () => {
               </div>
             </div>
             <div className="flex flex-col items-center">
-              <Button disabled={!privacySettingsAccepted} primary rounded className="w-64 h-12 mt-5 text-lg">
+              <Button
+                disabled={!privacySettingsAccepted}
+                primary
+                rounded
+                className="w-64 h-12 mt-5 text-lg"
+              >
                 Sign Up
               </Button>
 
@@ -167,7 +191,11 @@ const SignUp = () => {
                   {" "}
                   Already have an account?
                 </div>
-                <Link to='/login'
+                <Link
+                  to="/login"
+                  onClick={() => {
+                    dispatch(resetPasswords());
+                  }}
                   style={{
                     height: "55px",
                     fontSize: "15px",

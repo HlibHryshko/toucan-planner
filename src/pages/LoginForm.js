@@ -1,14 +1,37 @@
 import { useDispatch, useSelector } from "react-redux";
 import Button from "../components/Button";
 import Field from "../components/Field";
-import { changeEmail, changePassword } from "../store";
-import { Link } from "react-router-dom";
+import {
+  changeEmail,
+  changePassword,
+  hashPassword,
+  resetForm,
+  resetPasswords,
+} from "../store";
+import { Link, useNavigate } from "react-router-dom";
+/*
+TODO: ADD VALIDATION
+ADD HTTP REQUEST TO THE SERVER
+DISABLE EVERYTHING WHEN LOADING
+*/
 
 const LoginForm = () => {
   const dispatch = useDispatch();
-  const { email, password } = useSelector((state) => {
-    return state.form;
-  });
+
+  const navigate = useNavigate();
+
+  const { email, password } = useSelector(({ form }) => form);
+
+  const handleFormSubmit = (event) => {
+    event.preventDefault();
+    // some validation
+    dispatch(hashPassword());
+    // make http request to the server
+    dispatch(resetForm());
+
+    navigate("/");
+  };
+
   return (
     <div
       className="flex items-center justify-center"
@@ -30,7 +53,7 @@ const LoginForm = () => {
         }}
       />
       <form
-        onSubmit={() => {}}
+        onSubmit={handleFormSubmit}
         className="border-2 border-green-800 rounded-xl p-4 shadow-2xl space-y-10"
         style={{
           width: "458px",
@@ -58,14 +81,12 @@ const LoginForm = () => {
           <div>
             {/* div that holds fields */}
             <div>
-              <div
-                value={email}
-                onChange={(event) => {
-                  dispatch(changeEmail(event.target.value));
-                }}
-                className="flex justify-center"
-              >
+              <div className="flex justify-center">
                 <Field
+                  value={email}
+                  onChange={(event) => {
+                    dispatch(changeEmail(event.target.value));
+                  }}
                   className="text-center w-full h-12 max-h-full mx-10 mt-5 font-semibold"
                   placeholder="e-mail"
                 />
@@ -108,7 +129,11 @@ const LoginForm = () => {
                 >
                   Don't have an account?
                 </div>
-                <Link to='/signup'
+                <Link
+                  to="/signup"
+                  onClick={() => {
+                    dispatch(resetPasswords());
+                  }}
                   style={{
                     height: "55px",
                     fontSize: "15px",

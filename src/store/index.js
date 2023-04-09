@@ -3,6 +3,9 @@ import {
   changeConfirmPassword,
   changeEmail,
   changePassword,
+  resetPasswords,
+  resetForm,
+  hashPassword,
   formsReducer,
 } from "./slices/formsSlice";
 import { usersApi, useSignUpMutation, useSingInQuery } from "./apis/usersApi";
@@ -30,6 +33,14 @@ const store = configureStore({
 setupListeners(store.dispatch);
 
 export { store };
-export { changeConfirmPassword, changeEmail, changePassword, signIn };
+export {
+  changeConfirmPassword,
+  changeEmail,
+  changePassword,
+  resetForm,
+  resetPasswords,
+  hashPassword,
+  signIn,
+};
 
 export { useSignUpMutation, useSingInQuery, useFetchNextCategoriesQuery };
