@@ -10,7 +10,10 @@ module.exports = {
         'background-green': '#F3FFFD',
         'sidebar-org-background-green': '#004A47',
         'sidebar-category-background-green': '#005956',
-        'sidebar-add-org-background-green': '#027D78'
+        'sidebar-add-org-background-green': '#027D78',
+        'sidebar-add-org-hover-green': '#028d88',
+        'sidebar-org-selected-green': '#005450',
+        'sidebar-hover-green': '#006661'
       },
       boxShadow: {
         // x, y, blur, adding size, color
