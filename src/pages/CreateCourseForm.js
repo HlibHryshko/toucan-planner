@@ -86,7 +86,7 @@ const CreateCourseForm = () => {
                 </div>
               <div className="flex justify-center">
                 <textarea
-                  className="border border-green-600 resize-none rounded-xl text-center w-96 h-48 max-h-full mx-10  font-semibold "
+                  className="border border-green-600 bg-background-green resize-none rounded-xl text-center w-96 h-48 max-h-full mx-10  font-semibold "
                   placeholder="hfhhfhfhhfhh@gmail.com
                                 osjjdopskfj@gmail.com
                                 ksldoilfo@gmail.com
