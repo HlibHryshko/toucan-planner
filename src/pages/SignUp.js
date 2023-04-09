@@ -4,6 +4,7 @@ import CheckBox from "../components/CheckBox";
 import Field from "../components/Field";
 import { useDispatch, useSelector } from "react-redux";
 import { changeConfirmPassword, changeEmail, changePassword } from "../store";
+import { Link } from "react-router-dom";
 
 const SignUp = () => {
   const dispatch = useDispatch();
@@ -149,7 +150,7 @@ const SignUp = () => {
               </div>
             </div>
             <div className="flex flex-col items-center">
-              <Button primary rounded className="w-64 h-12 mt-5 text-lg">
+              <Button disabled={!privacySettingsAccepted} primary rounded className="w-64 h-12 mt-5 text-lg">
                 Sign Up
               </Button>
 
@@ -166,7 +167,7 @@ const SignUp = () => {
                   {" "}
                   Already have an account?
                 </div>
-                <div
+                <Link to='/login'
                   style={{
                     height: "55px",
                     fontSize: "15px",
@@ -177,7 +178,7 @@ const SignUp = () => {
                 >
                   {" "}
                   Sign In
-                </div>
+                </Link>
               </div>
             </div>
           </div>
