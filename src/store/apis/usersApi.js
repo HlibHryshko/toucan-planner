@@ -22,7 +22,7 @@ const usersApi = createApi({
       signUp: builder.mutation({
         query: (form) => {
           return {
-            url: "/signup",
+            url: "/user/Authentication/signUp",
             params: {
               email: form.email,
               password: form.password,
