@@ -3,7 +3,7 @@ import Button from "../components/Button";
 import Field from "../components/Field";
 import { changeEmail, changePassword } from "../store";
 
-const CreateCourseForm = () => {
+const ProfileForm = () => {
   const dispatch = useDispatch();
   const { email, password } = useSelector((state) => {
     return state.form;
@@ -32,14 +32,14 @@ const CreateCourseForm = () => {
         onSubmit={() => {}}
         className="border-2 border-green-800 rounded-xl p-4 shadow-2xl space-y-10"
         style={{
-          width: "849px",
+          width: "600px",
           height: "600px",
           border: "6px solid #004A47",
           boxShadow: "0px 0px 66px 6px rgba(0, 0, 0, 0.25)",
           borderRadius: "25px",
         }}
       >
-        {/* Create a course div */}
+        {/* Profile div */}
         <div
           className="text-center mx-auto"
           style={{
@@ -51,9 +51,9 @@ const CreateCourseForm = () => {
             marginTop: "28px",
           }}
         >
-          <h1>CREATE A COURSE</h1>
+          <h1>PROFILE</h1>
         </div>
-        {/* div that creates space between fields, text and buttons */}
+        {/* div that creates space between fields and buttons */}
         <div className="flex flex-col justify-center space-y-5 font-semibold">
           <div>
             {/* div that holds fields */}
@@ -67,38 +67,56 @@ const CreateCourseForm = () => {
               >
                 <Field
                   className="text-center w-96 h-12 max-h-full mt-0 font-semibold"
-                  placeholder="Course name"
-                />
-              </div>
-                {/* Create a Add admins div */}
-                <div
-                className="text-center mx-auto"
-                style={{
-                    height: "55px",
-                    fontWeight: "400",
-                    fontSize: "32px",
-                    fontFamily: "Koh Santepheap",
-                    color: "#474747",
-                    marginTop: "6px",
-                }}
-                >
-                <h1>Add admins:</h1>
-                </div>
-              <div className="flex justify-center">
-                <textarea
-                  className="border border-green-600 bg-background-green resize-none rounded-xl text-center w-96 h-48 max-h-full mx-10  font-semibold "
-                  placeholder="hfhhfhfhhfhh@gmail.com
-                                osjjdopskfj@gmail.com
-                                ksldoilfo@gmail.com
-                                starwageningermane@gmail.com
-                                ilovemcdonalds@gmail.com"
+                  placeholder="Name"
                 />
               </div>
             </div>
             {/* div that holds buttons and so on */}
             <div className="flex flex-col items-center">
-              <Button primary rounded className="w-96 h-12 mt-5 text-lg">
-                Done
+              <Button primary rounded className="rounded-xl w-96 h-12 mt-5 text-lg">
+                My courses
+              </Button>
+            </div>
+            <div
+                value={email}
+                onChange={(event) => {
+                  dispatch(changeEmail(event.target.value));
+                }}
+                className="flex justify-center"
+              >
+                <Field
+                  className="text-center w-96 h-12 max-h-full mt-6 font-semibold"
+                  placeholder="old password"
+                />
+              </div>
+              <div
+                value={email}
+                onChange={(event) => {
+                  dispatch(changeEmail(event.target.value));
+                }}
+                className="flex justify-center"
+              >
+                <Field
+                  className="text-center w-96 h-12 max-h-full mt-2 font-semibold"
+                  placeholder="new password"
+                />
+              </div>
+              <div
+                value={email}
+                onChange={(event) => {
+                  dispatch(changeEmail(event.target.value));
+                }}
+                className="flex justify-center"
+              >
+                <Field
+                  className="text-center w-96 h-12 max-h-full mt-2 font-semibold"
+                  placeholder="repeat password"
+                />
+              </div>
+            {/* div that holds buttons and so on */}
+            <div className="flex flex-col items-center">
+              <Button primary rounded className="w-64 h-12 mt-10 text-lg">
+                Back
               </Button>
             </div>
           </div>
@@ -108,4 +126,4 @@ const CreateCourseForm = () => {
   );
 };
 
-export default CreateCourseForm;
+export default ProfileForm;
