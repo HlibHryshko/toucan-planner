@@ -11,14 +11,14 @@ const App = () => {
     <div className="bg-background-green">
       <BrowserRouter>
         <div className="">
-          <div className="space-x-4">
+          {/* <div className="space-x-4">
             <Link to="/login">Login</Link>
             <Link to="/signup">Sign Up</Link>
             <Link to="/">Main Page</Link>
             <Link to="/start">Start Page</Link>
             <Link to="/createcourse">Create Course</Link>
             <Link to="/profile">Profile</Link>
-          </div>
+          </div> */}
 
           <Routes>
             <Route path="/signup" element={<SignUp />} />
