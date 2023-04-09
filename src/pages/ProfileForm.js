@@ -3,7 +3,7 @@ import Button from "../components/Button";
 import Field from "../components/Field";
 import {
   changeConfirmPassword,
-  changeEmail,
+  changeName,
   changeOldPassword,
   changePassword,
 } from "../store";
@@ -13,7 +13,7 @@ const ProfileForm = () => {
   const navigate = useNavigate();
 
   const dispatch = useDispatch();
-  const { email, oldPassword, password, confirmPassword } = useSelector(
+  const { name, oldPassword, password, confirmPassword } = useSelector(
     (state) => {
       return state.form;
     }
@@ -70,9 +70,9 @@ const ProfileForm = () => {
             <div>
               <div className="flex justify-center">
                 <Field
-                  value={email}
+                  value={name}
                   onChange={(event) => {
-                    dispatch(changeEmail(event.target.value));
+                    dispatch(changeName(event.target.value));
                   }}
                   className="text-center w-96 h-12 max-h-full mt-0 font-semibold"
                   placeholder="Name"

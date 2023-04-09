@@ -1,11 +1,13 @@
 import { useDispatch, useSelector } from "react-redux";
 import Button from "../components/Button";
 import Field from "../components/Field";
-import { changeEmail, changePassword } from "../store";
+import { changeCourseName, changeAdminNames } from "../store";
+import { useNavigate } from "react-router-dom";
 
 const CreateCourseForm = () => {
+  const navigate = useNavigate();
   const dispatch = useDispatch();
-  const { email, password } = useSelector((state) => {
+  const { courseName, adminNames } = useSelector((state) => {
     return state.form;
   });
   return (
@@ -58,34 +60,36 @@ const CreateCourseForm = () => {
           <div>
             {/* div that holds fields */}
             <div>
-              <div
-                value={email}
-                onChange={(event) => {
-                  dispatch(changeEmail(event.target.value));
-                }}
-                className="flex justify-center"
-              >
+              <div className="flex justify-center">
                 <Field
+                  value={courseName}
+                  onChange={(event) => {
+                    dispatch(changeCourseName(event.target.value));
+                  }}
                   className="text-center w-96 h-12 max-h-full mt-0 font-semibold"
                   placeholder="Course name"
                 />
               </div>
-                {/* Create a Add admins div */}
-                <div
+              {/* Create a Add admins div */}
+              <div
                 className="text-center mx-auto"
                 style={{
-                    height: "55px",
-                    fontWeight: "400",
-                    fontSize: "32px",
-                    fontFamily: "Koh Santepheap",
-                    color: "#474747",
-                    marginTop: "6px",
+                  height: "55px",
+                  fontWeight: "400",
+                  fontSize: "32px",
+                  fontFamily: "Koh Santepheap",
+                  color: "#474747",
+                  marginTop: "6px",
                 }}
-                >
+              >
                 <h1>Add admins:</h1>
-                </div>
+              </div>
               <div className="flex justify-center">
                 <textarea
+                  value={adminNames}
+                  onChange={(event) => {
+                    dispatch(changeAdminNames(event.target.value));
+                  }}
                   className="border border-green-600 bg-background-green resize-none rounded-xl text-center w-96 h-48 max-h-full mx-10  font-semibold "
                   placeholder="hfhhfhfhhfhh@gmail.com
                                 osjjdopskfj@gmail.com
@@ -97,7 +101,15 @@ const CreateCourseForm = () => {
             </div>
             {/* div that holds buttons and so on */}
             <div className="flex flex-col items-center">
-              <Button primary rounded className="w-96 h-12 mt-5 text-lg">
+              <Button
+                onClick={(event) => {
+                  event.preventDefault();
+                  navigate("/");
+                }}
+                primary
+                rounded
+                className="w-96 h-12 mt-5 text-lg"
+              >
                 Done
               </Button>
             </div>

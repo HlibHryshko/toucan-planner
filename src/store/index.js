@@ -1,5 +1,8 @@
 import { configureStore } from "@reduxjs/toolkit";
 import {
+  changeName,
+  changeCourseName,
+  changeAdminNames,
   changeConfirmPassword,
   changeEmail,
   changePassword,
@@ -44,6 +47,9 @@ setupListeners(store.dispatch);
 
 export { store };
 export {
+  changeName,
+  changeCourseName,
+  changeAdminNames,
   changeConfirmPassword,
   changeEmail,
   changePassword,

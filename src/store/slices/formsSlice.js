@@ -5,6 +5,9 @@ import { salt } from "../..";
 const formsSlice = createSlice({
   name: "form",
   initialState: {
+    name: "",
+    courseName: "",
+    adminNames: "",
     email: "",
     oldPassword: "",
     password: "",
@@ -14,6 +17,15 @@ const formsSlice = createSlice({
   reducers: {
     changeEmail(state, action) {
       state.email = action.payload;
+    },
+    changeName(state, action) {
+      state.name = action.payload;
+    },
+    changeCourseName(state, action) {
+      state.courseName = action.payload;
+    },
+    changeAdminNames(state, action) {
+      state.adminNames = action.payload;
     },
     changeOldPassword(state, action) {
       state.oldPassword = action.payload;
@@ -38,6 +50,9 @@ const formsSlice = createSlice({
 
 export const formsReducer = formsSlice.reducer;
 export const {
+  changeName,
+  changeCourseName,
+  changeAdminNames,
   changeEmail,
   changeOldPassword,
   changePassword,
