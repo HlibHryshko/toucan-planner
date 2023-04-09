@@ -6,7 +6,7 @@ import SignUp from "./pages/SignUp";
 
 const App = () => {
   return (
-    <div className="">
+    <div className="bg-background-green">
       <BrowserRouter>
         <div className="">
           <div className="space-x-4">
