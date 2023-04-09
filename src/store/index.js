@@ -15,6 +15,7 @@ import {
   useFetchNextCategoriesQuery,
 } from "./apis/categoriesApi";
 import { usersReducer, signIn } from "./slices/usersSlice";
+import { calendarApi, useFetchCalendarDataQuery } from "./apis/calendarApi";
 
 const store = configureStore({
   reducer: {
@@ -22,11 +23,13 @@ const store = configureStore({
     users: usersReducer,
     [usersApi.reducerPath]: usersApi.reducer,
     [categoriesApi.reducerPath]: categoriesApi.reducer,
+    [calendarApi.reducerPath]: calendarApi.reducer,
   },
   middleware: (getDefaultMiddleware) => {
     return getDefaultMiddleware()
       .concat(usersApi.middleware)
-      .concat(categoriesApi.middleware);
+      .concat(categoriesApi.middleware)
+      .concat(calendarApi.middleware);
   },
 });
 
@@ -43,4 +46,9 @@ export {
   signIn,
 };
 
-export { useSignUpMutation, useSingInQuery, useFetchNextCategoriesQuery };
+export {
+  useSignUpMutation,
+  useSingInQuery,
+  useFetchNextCategoriesQuery,
+  useFetchCalendarDataQuery,
+};
