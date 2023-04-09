@@ -22,7 +22,7 @@ const ProfileForm = () => {
         src="tucan.png"
         style={{
           position: "absolute",
-          top: "721px",
+          top: "500px",
           right: "0",
           width: "231px",
           height: "346px",
