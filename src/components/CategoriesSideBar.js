@@ -108,8 +108,9 @@ const CategoriesSidebar = () => {
   // if there is no currentPath => return only organizations
   // there is a currentPath => return children
 
+
   return (
-    <div>
+    <div className="flex flex-row h-full bg-primary-green">
       <OrganizationsList
         organizations={categories.filter((category) => {
           return !category.parentId;
@@ -117,7 +118,6 @@ const CategoriesSidebar = () => {
         organization={currentOrganization}
         onOrganizationClick={handleOrganizationClick}
       />
-      <hr />
       <CategoriesList
         handleReturn={handleReturn}
         previousCategory={categories.find(

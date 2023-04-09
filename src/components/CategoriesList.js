@@ -52,6 +52,7 @@ const CategoriesList = ({
         console.log(category.name);
         return (
           <div
+            className="w-64 p-2 font-semibold shadow-category text-white bg-sidebar-category-background-green text-xl border-2 border-primary-green place-self-center"
             onClick={() => {
               handleCategoryClick(category);
             }}

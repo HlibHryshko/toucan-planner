@@ -6,9 +6,9 @@ import SignUp from "./pages/SignUp";
 
 const App = () => {
   return (
-    <div>
+    <div className="">
       <BrowserRouter>
-        <div>
+        <div className="">
           <div className="space-x-4">
             <Link to="/login">Login</Link> 
             <Link to="/signup">Sign Up</Link> 
