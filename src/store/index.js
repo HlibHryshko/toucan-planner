@@ -20,9 +20,11 @@ import {
 } from "./apis/categoriesApi";
 import { usersReducer, signIn } from "./slices/usersSlice";
 import { calendarApi, useFetchCalendarDataQuery } from "./apis/calendarApi";
+import { categoriesReducer, addCategories } from "./slices/categoriesSlice";
 
 const store = configureStore({
   reducer: {
+    categories: categoriesReducer,
     form: formsReducer,
     users: usersReducer,
     [usersApi.reducerPath]: usersApi.reducer,
@@ -48,6 +50,7 @@ export {
   resetPasswords,
   hashPassword,
   signIn,
+  addCategories,
   useSignUpMutation,
   useSignInMutation,
   useFetchNextCategoriesQuery,
