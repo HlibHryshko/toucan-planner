@@ -133,7 +133,7 @@ const ProfileForm = () => {
                 rounded
                 className="w-64 h-12 mt-10 text-lg"
               >
-                Back
+                Save
               </Button>
             </div>
           </div>

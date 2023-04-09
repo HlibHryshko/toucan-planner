@@ -1,9 +1,10 @@
 import Calendar from "../components/Calendar";
 import CategoriesSidebar from "../components/CategoriesSideBar";
-import { GoThreeBars } from "react-icons/go";
+import { GoPerson, GoProject, GoThreeBars } from "react-icons/go";
 import { useState } from "react";
 import { useSelector } from "react-redux";
 import StartingPage from "./StartingPage";
+import { useNavigate } from "react-router-dom";
 
 const MainPage = () => {
   const [isExpanded, setIsExpanded] = useState(true);
@@ -15,8 +16,11 @@ const MainPage = () => {
     scrollContainer.scrollLeft += evt.deltaY;
   });
 
+  const navigate = useNavigate();
+
   return (
     <div>
+      <GoPerson  onClick={() => {navigate('/profile')}}/>
       {useSelector((state) => state.categories).length === 0 ? (
         <StartingPage />
       ) : (
