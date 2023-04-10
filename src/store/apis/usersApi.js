@@ -27,7 +27,7 @@ const usersApi = createApi({
               email: form.email,
               password: form.password,
             },
-            method: "post",
+            method: "get",
           };
         },
       }),

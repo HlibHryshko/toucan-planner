@@ -27,8 +27,10 @@ const SignUp = () => {
   const [ signUserUp, results ] = useSignUpMutation();
 
   if (results.isSuccess) {
-    dispatch(signIn({id: '12354132', email: 'something@test.com', name: 'Hrushka Peppa'}))
-    navigate('/'); 
+    if (results.data.user) {
+      dispatch(signIn(results.data.user));
+      navigate("/");
+    }
   }
 
   const handleFormSubmit = (event) => {
@@ -37,7 +39,6 @@ const SignUp = () => {
     // dispatch(hashPassword());
     // make http request to the server
     signUserUp({ email, password });
-    console.log(results);
     dispatch(resetForm());
   };
 
