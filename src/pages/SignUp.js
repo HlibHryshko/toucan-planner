@@ -15,6 +15,12 @@ import {
 } from "../store";
 import { Link, useNavigate } from "react-router-dom";
 
+/*
+TODO: ADD VALIDATION
+ADD HTTP REQUEST TO THE SERVER
+DISABLE EVERYTHING WHEN LOADING
+*/
+
 const SignUp = () => {
   
   // make local hashing, local forms
