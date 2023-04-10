@@ -16,15 +16,18 @@ import {
 import { Link, useNavigate } from "react-router-dom";
 
 const SignUp = () => {
+  
+  // make local hashing, local forms
+
   const dispatch = useDispatch();
 
   const navigate = useNavigate();
 
-  const { email, password, confirmPassword } = useSelector(
+  const { email, password, confirmPassword, hashedPassword } = useSelector(
     (state) => state.form
   );
 
-  const [ signUserUp, results ] = useSignUpMutation();
+  const [signUserUp, results] = useSignUpMutation();
 
   if (results.isSuccess) {
     if (results.data.user) {
@@ -38,9 +41,14 @@ const SignUp = () => {
     // some validation
     // dispatch(hashPassword());
     // make http request to the server
-    signUserUp({ email, password });
-    dispatch(resetForm());
+    dispatch(hashPassword());
   };
+
+  if (hashedPassword) {
+    console.log(hashedPassword);
+    signUserUp({ email, hashedPassword});
+    dispatch(resetForm());
+  }
 
   const [privacySettingsAccepted, setPrivaceSettingsAccepted] = useState(false);
   return (

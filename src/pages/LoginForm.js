@@ -21,7 +21,7 @@ const LoginForm = () => {
 
   const navigate = useNavigate();
 
-  const { email, password } = useSelector(({ form }) => form);
+  const { email, password, hashedPassword } = useSelector(({ form }) => form);
 
   const [signUserIn, results] = useSignInMutation();
 
@@ -36,8 +36,8 @@ const LoginForm = () => {
     event.preventDefault();
     // some validation
     // dispatch(hashPassword());
-    // make http request to the server\
-    signUserIn({ email, password });
+    // make http request to the server
+    signUserIn({ email, hashedPassword });
     dispatch(resetForm());
 
     // navigate("/");

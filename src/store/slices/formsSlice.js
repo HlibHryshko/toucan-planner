@@ -1,6 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { hashSync } from "bcryptjs";
-import { salt } from "../..";
+import { sha256 } from "js-sha256";
 
 const formsSlice = createSlice({
   name: "form",
@@ -37,13 +36,24 @@ const formsSlice = createSlice({
       state.confirmPassword = action.payload;
     },
     resetPasswords(state, action) {
-      return { ...state, password: "", confirmPassword: "" };
+      return {
+        ...state,
+        password: "",
+        confirmPassword: "",
+        hashedPassword: "",
+      };
     },
     hashPassword(state, action) {
-      state.hashedPassword = hashSync(state.password, salt);
+      state.hashedPassword = sha256(state.password);
     },
     resetForm(state, action) {
-      return { ...state, email: "", password: "", confirmPassword: "" };
+      return {
+        ...state,
+        email: "",
+        password: "",
+        confirmPassword: "",
+        hashedPassword: "",
+      };
     },
   },
 });
