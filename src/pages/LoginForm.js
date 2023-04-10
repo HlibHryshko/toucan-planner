@@ -8,6 +8,7 @@ import {
   resetPasswords,
   signIn,
   useSignInMutation,
+  hashPassword,
 } from "../store";
 import { Link, useNavigate } from "react-router-dom";
 /*
@@ -37,11 +38,16 @@ const LoginForm = () => {
     // some validation
     // dispatch(hashPassword());
     // make http request to the server
-    signUserIn({ email, hashedPassword });
-    dispatch(resetForm());
 
+    dispatch(hashPassword());
     // navigate("/");
   };
+
+  if (hashedPassword) {
+    console.log(hashedPassword);
+    signUserIn({ email, hashedPassword });
+    dispatch(resetForm());
+  }
 
   return (
     <div
